@@ -71,7 +71,7 @@ void convert(std::istream& in_, std::ostream& out_) {
             if (direction == Right) {
                 out_ << std::showpos << direction << '\n';
             } else {
-                out_ << direction << '\n';
+                out_ << std::noshowpos << direction << '\n';
             }
         }
     }
@@ -113,7 +113,7 @@ std::tuple<char, std::string, Direction> parseRightPart(std::string rightPart_) 
     Direction direction = None;
     if (last == 'L') {
         direction = Left;
-    } else {
+    } else if (last == 'R'){
         direction = Right;
     }
     return std::make_tuple(convertChar(rightPart_.front()),

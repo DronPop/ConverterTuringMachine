@@ -55,9 +55,9 @@ void convert(std::istream& in_, std::ostream& out_) {
     std::string str;
     while (std::getline(in_, str)) {
         if (isComment(str)) {
-            out_ << str;
+            out_ << str << '\n';
         } else if (isEmpty(str)) {
-            out_ << str;
+            out_ << str << '\n';
         } else {
             const size_t midIndex = str.find("->");
             const std::string leftPartOfRule = str.substr(0, midIndex);
